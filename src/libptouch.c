@@ -190,6 +190,12 @@ int ptouch_init(ptouch_dev ptdev)
 	return ptouch_send(ptdev, (uint8_t *)cmd, strlen(cmd));
 }
 
+int ptouch_set_each(ptouch_dev ptdev)
+{
+	char cmd[]="\x1b\x69\x4d\x40"; /* 1B 69 4D = set each mode, 40 = 01000000 (autocut on) */
+	return ptouch_send(ptdev, (uint8_t *)cmd, strlen(cmd));
+}
+
 int ptouch_enable_packbits(ptouch_dev ptdev)
 {				/* 4D 00 = disable compression */
 	char cmd[] = "M\x02";	/* 4D 02 = enable packbits compression mode */

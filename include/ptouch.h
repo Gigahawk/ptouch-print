@@ -94,6 +94,7 @@ int ptouch_open(ptouch_dev *ptdev);
 int ptouch_close(ptouch_dev ptdev);
 int ptouch_send(ptouch_dev ptdev, uint8_t *data, size_t len);
 int ptouch_init(ptouch_dev ptdev);
+int ptouch_set_each(ptouch_dev ptdev);
 int ptouch_lf(ptouch_dev ptdev);
 int ptouch_ff(ptouch_dev ptdev);
 size_t ptouch_get_max_pixel_width(ptouch_dev ptdev);

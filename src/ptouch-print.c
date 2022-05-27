@@ -493,6 +493,9 @@ int main(int argc, char *argv[])
 	if (ptouch_init(ptdev) != 0) {
 		printf(_("ptouch_init() failed\n"));
 	}
+	if (ptouch_set_each(ptdev) != 0) {
+		printf(_("ptouch_set_each() failed\n"));
+	}
 	if (ptouch_getstatus(ptdev) != 0) {
 		printf(_("ptouch_getstatus() failed\n"));
 		return 1;
